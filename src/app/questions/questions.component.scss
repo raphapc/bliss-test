@@ -1,0 +1,27 @@
+.questions-list {
+  .questions-search {
+    width: 600px;
+  }
+
+  .question-card {
+    max-width: 600px;
+    max-height: 100px;
+    margin-bottom: 8px;
+
+    .question-card__content {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+
+      .question-card__img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+      }
+
+      span {
+        margin: 8px;
+      }
+    }
+  }
+}

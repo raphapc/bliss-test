@@ -1,0 +1,14 @@
+.offline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  .offline-icon {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    height: 100px;
+    width: 200px;
+  }
+}

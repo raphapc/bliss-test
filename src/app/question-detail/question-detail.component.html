@@ -1,0 +1,27 @@
+<button mat-stroked-button (click)="backtoList()">
+  Back to List
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<mat-card class="question-detail-container">
+  <mat-card-content>
+    <mat-radio-group class="question">
+      <h2 class="question-number">Question {{ question.id }}</h2>
+      <span class="question-text">{{ question.question }}</span>
+      <mat-radio-button
+        *ngFor="let option of question.choices"
+        value="option.id"
+        (change)="selectOption(option)"
+      >
+        <div class="question-option">
+          <span class="question-choice">{{ option.choice }}</span>
+          <span class="question-votes">Votes: {{ option.votes }}</span>
+        </div>
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+
+  <mat-card-actions class="questions-buttons-container">
+    <button class="questions-buttons" mat-raised-button color="primary" (click)="vote()" [disabled]="!selectedOption">Vote</button>
+    <button class="questions-buttons" mat-raised-button (click)="share()">Share</button>
+  </mat-card-actions>
+</mat-card>

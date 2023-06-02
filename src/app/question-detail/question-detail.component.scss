@@ -1,0 +1,33 @@
+.question-detail-container {
+  max-width: 600px;
+  .question {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    .question-text {
+      font-size: medium;
+      margin-bottom: 8px;
+    }
+
+    .question-option {
+      min-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      .question-choice {
+        font-size: medium;
+      }
+      .question-votes {
+        font-style: italic;
+        font-size: small;
+      }
+    }
+  }
+  .questions-buttons-container {
+    margin: 12px;
+
+    .questions-buttons {
+      width: 150px;
+      margin-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="questions-list" *ngIf="!shouldRetry && !isLoading">
+  <mat-form-field class="questions-search">
+    <mat-label>Search...</mat-label>
+    <input matInput type="text" [(ngModel)]="searchTerm" />
+    <button matSuffix mat-raised-button color="primary" (click)="search()">
+      Search
+    </button>
+  </mat-form-field>
+
+  <mat-card
+    class="question-card"
+    *ngFor="let question of questionsList"
+    (click)="selectQuestion(question)"
+  >
+    <mat-card-content matRipple class="question-card__content">
+      <img class="question-card__img" src="{{ question.thumb_url }}" />
+      <span class="header1">{{ question.question }}</span>
+    </mat-card-content>
+  </mat-card>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="loadMoreData()"
+  >
+    Load More
+  </button>
+</div>
+
+<app-loading *ngIf="isLoading"/>
+<app-retry *ngIf="shouldRetry" (fetchDataParent)="fetchData()"/>
